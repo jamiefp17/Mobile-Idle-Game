@@ -98,12 +98,9 @@ public class BehaviourTree : MonoBehaviour
             int count = nodePathVector.Count - 1; //The size of the vector.
             for (int i = count; i >= 0; i--) //Works backwards, so lower service functions are called first.
             {
-                if (true) //Checks to see if the node is a service node.
+                if (nodePathVector[i] is CService) //Checks to see if the node is a service node.
                 {
-                    //dynamic_cast<CService*>(nodePathVector[i])->ServiceFunction(); //Calls the function on the service node.
-                   // nodePathVector[i] = (CService)nodePathVector[i];
-                    (CService)nodePathVector.ServiceFunction();
-
+                    ((CService)nodePathVector[i]).ServiceFunction();
 
                 }
             }
