@@ -21,7 +21,7 @@ public class BehaviourTree : MonoBehaviour
 
     abstract class CNode
     {
-        public /*protected*/ enum ETickReturn //The responces a node can return to its parent when ticked.
+        internal enum ETickReturn //The responces a node can return to its parent when ticked.
         {
             Success,
 		    Failure,
