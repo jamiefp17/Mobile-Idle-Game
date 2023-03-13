@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Table_4
+  m_Name: Floorboards and Walls 1_11
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 1298369164, guid: 97aff1a15559dbd43bf43a2bc4fe890e, type: 3}
+  m_Sprite: {fileID: 187465481, guid: c2fc617e23880744b908fe0bf8e29ed3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

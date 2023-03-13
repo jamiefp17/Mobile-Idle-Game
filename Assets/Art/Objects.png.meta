@@ -623,15 +623,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Objects_24
+      name: Stool
       rect:
         serializedVersion: 2
         x: 192
         y: 256
         width: 16
         height: 16
-      alignment: 1
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -5138,6 +5138,7 @@ TextureImporter:
       Objects_59: -996860635
       Objects_211: 500330642
       Objects_91: 605593655
+      Stool: 1858266310
       Objects_124: -323212903
       Objects_113: -1036105058
       Objects_183: -258241010
@@ -5231,7 +5232,6 @@ TextureImporter:
       Objects_134: -632662269
       Objects_207: -671766232
       Objects_185: 1856104560
-      Objects_24: 1858266310
       Objects_212: -400847264
       Objects_209: -2017245188
       Objects_222: -2018339525
@@ -5253,8 +5253,8 @@ TextureImporter:
       Objects_103: 255508403
       Objects_179: 2017663534
       Table_5: -1579532686
-      Objects_137: -1277388120
       Objects_227: -1622669129
+      Objects_137: -1277388120
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
