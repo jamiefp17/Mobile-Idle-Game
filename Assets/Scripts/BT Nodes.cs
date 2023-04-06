@@ -2,26 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BehaviourTree : MonoBehaviour
+public class BTNodes : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     //instance of node path that is global to all of the nodes, allowing them to all push to the vector during their tick.
     static CCurrentNodePath nodePath = new CCurrentNodePath();
 
-    abstract class CNode
+    public abstract class CNode
     {
-        internal enum ETickReturn //The responces a node can return to its parent when ticked.
+        /*internal*/public enum ETickReturn //The responces a node can return to its parent when ticked.
         {
             Success,
 		    Failure,
@@ -34,18 +23,18 @@ public class BehaviourTree : MonoBehaviour
 
     //Both leaf and check are open classes, which do not provide any additional data or functionality. The difference between them is the intent of the node.
     //More functionality can be added if it is ever required, so this keeps the door open to expansion.
-    abstract class CLeaf : CNode 
+    public abstract class CLeaf : CNode 
     {
         public abstract override ETickReturn Tick(int agentID);
     };
 
-    abstract class CCheck : CNode
+    public abstract class CCheck : CNode
     {
         public abstract override ETickReturn Tick(int agentID);
     };
 
 
-    abstract class CComposite : CNode
+    public abstract class CComposite : CNode
     {
         protected List<CNode> children = new List<CNode>(); //Can hold many children.
 
@@ -61,7 +50,7 @@ public class BehaviourTree : MonoBehaviour
     
     };
 
-    abstract class CService : CNode
+    public abstract class CService : CNode
     {
         private	CComposite child; //Has a single composite child.
         public void SetChild(CComposite c)
@@ -79,7 +68,7 @@ public class BehaviourTree : MonoBehaviour
         public abstract void ServiceFunction(); //This class is abstract, but any children will have a service function, which is repeatedly called when a descendant is running.
     };
 
-    class CCurrentNodePath
+    public class CCurrentNodePath
     {
         //A vector that holds information on the path of nodes that are currently running. This is used in the excecution of service nodes, allowing the program to run
         //the function of any service node that is in the path.
@@ -107,7 +96,7 @@ public class BehaviourTree : MonoBehaviour
         }
     };
 
-    abstract class CRequestHandler : CNode
+    public abstract class CRequestHandler : CNode
     {
         private CNode child; //Has a single node child.
         private string key; //Used as the key for the blackboard.
@@ -118,7 +107,7 @@ public class BehaviourTree : MonoBehaviour
         public abstract override ETickReturn Tick(int agentID);
     };
 
-    abstract class CRoot : CNode
+    public abstract class CRoot : CNode
     {
         private CNode child; //Has a single node child.
 
@@ -135,7 +124,7 @@ public class BehaviourTree : MonoBehaviour
         }
     };
 
-    abstract class CSelector : CComposite
+    public abstract class CSelector : CComposite
     {
         public override ETickReturn CallChildren(int agentID)
         {
@@ -158,7 +147,7 @@ public class BehaviourTree : MonoBehaviour
         }
     };
 
-    abstract class CSequence : CComposite
+    public abstract class CSequence : CComposite
     {
         public override ETickReturn CallChildren(int agentID)
         {
