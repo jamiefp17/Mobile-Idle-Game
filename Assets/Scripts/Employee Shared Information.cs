@@ -36,9 +36,9 @@ public static class EmployeeSharedInformation
         }
     }
 
-    class SCustomerPositions
+    public static class SCustomerPositions
     {
-        Vector2[] positions = new Vector2[16] 
+        public static Vector2[] positions = new Vector2[16] 
         { new Vector2(1.5f, -6.5f), 
             new Vector2(1.5f, -4.5f), 
             new Vector2(1.5f, -2.5f), 
@@ -56,7 +56,7 @@ public static class EmployeeSharedInformation
             new Vector2(14.5f, -2.5f), 
             new Vector2(16.5f, -2.5f), }; //The positions where customers can wait to be served.
 
-        bool[] available = new bool[16]
+        public static bool[] available = new bool[16]
             { true, true, true, true,
             true, true, true, true,
             true, true, true, true,
