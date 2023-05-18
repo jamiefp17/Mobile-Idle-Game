@@ -16,7 +16,7 @@ public class AgentMovement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-        int tempIndex = 13;
+        int tempIndex = Random.Range(0,15);
         Vector3 dest = new Vector3(EmployeeSharedInformation.SCustomerPositions.positions[tempIndex].x, EmployeeSharedInformation.SCustomerPositions.positions[tempIndex].y, 0.0f);
         agent.SetDestination(dest);
     }
